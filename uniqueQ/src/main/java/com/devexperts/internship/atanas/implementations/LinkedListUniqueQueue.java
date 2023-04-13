@@ -5,6 +5,11 @@ import com.devexperts.internship.atanas.UniqueQueue;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
+/**
+ * An implementation of the UniqueQueue<T> interface. The <code>add</code> method has
+ * time complexity of O(n). The <code>get</code> method - O(1).
+ * @param <T>
+ */
 public class LinkedListUniqueQueue<T> implements UniqueQueue<T> {
 
     private final LinkedList<T> queue;

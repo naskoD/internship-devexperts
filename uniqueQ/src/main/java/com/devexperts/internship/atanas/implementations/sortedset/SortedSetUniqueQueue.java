@@ -5,6 +5,11 @@ import com.devexperts.internship.atanas.UniqueQueue;
 import java.util.NoSuchElementException;
 import java.util.TreeSet;
 
+/**
+ * An implementation of the UniqueQueue<T> interface. The <code>add</code> method has
+ * time complexity of O(log(n)) in worst case. The <code>get</code> method - O(1).
+ * @param <T>
+ */
 public class SortedSetUniqueQueue<T> implements UniqueQueue<T> {
 
     private final TreeSet<DateTimeOfInitializationWrapper<T>> set;
