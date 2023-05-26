@@ -20,13 +20,13 @@ public class SortedSetUniqueQueue<T> implements UniqueQueue<T> {
 
 
     @Override
-    public boolean add(T obj) {
+    public synchronized boolean add(T obj) {
         DateTimeOfInitializationWrapper<T> newQueueElement = new DateTimeOfInitializationWrapper<>(obj);
         return this.set.add(newQueueElement);
     }
 
     @Override
-    public T get() throws NoSuchElementException {
+    public synchronized T get() throws NoSuchElementException {
         DateTimeOfInitializationWrapper<T> firstWrapper = this.set.pollFirst();
         if(firstWrapper==null){
             throw new NoSuchElementException();

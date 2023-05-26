@@ -19,7 +19,7 @@ public class LinkedListUniqueQueue<T> implements UniqueQueue<T> {
     }
 
     @Override
-    public boolean add(T obj) {
+    public synchronized boolean add(T obj) {
         if(queue.contains(obj)){
             return false;
         }
@@ -27,7 +27,7 @@ public class LinkedListUniqueQueue<T> implements UniqueQueue<T> {
     }
 
     @Override
-    public T get() throws NoSuchElementException {
+    public synchronized T get() throws NoSuchElementException {
         if(queue.isEmpty()){
             throw new NoSuchElementException();
         }
